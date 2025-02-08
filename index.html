@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Firebase Auth App</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="form-container" id="login-container">
+            <h2>Login</h2>
+            <input type="email" id="login-email" placeholder="Email">
+            <input type="password" id="login-password" placeholder="Password">
+            <button onclick="login()">Login</button>
+            <p><a href="#" onclick="showSignup()">Create an account</a></p>
+            <p><a href="#" onclick="forgotPassword()">Forgot password?</a></p>
+            <p id="error-message" class="error"></p>
+        </div>
+
+        <div class="form-container" id="signup-container" style="display: none;">
+            <h2>Sign Up</h2>
+            <input type="email" id="signup-email" placeholder="Email">
+            <input type="password" id="signup-password" placeholder="Password">
+            <button onclick="signup()">Sign Up</button>
+            <p><a href="#" onclick="showLogin()">Already have an account? Login</a></p>
+            <p id="signup-error" class="error"></p>
+        </div>
+
+        <div class="dashboard" id="dashboard" style="display: none;">
+            <div class="sidebar">
+                <h3>Dashboard</h3>
+                <button onclick="logout()">Logout</button>
+            </div>
+            <div class="content">
+                <h1>Welcome to the Dashboard</h1>
+                <p>You are logged in.</p>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
